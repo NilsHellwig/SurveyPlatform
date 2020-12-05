@@ -1,0 +1,84 @@
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content="width=device-width, initial-scale=1">
+  <title>Study: Credibility</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loading.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent"/>
+</head>
+
+<body>
+    <div class="intro">
+        <footer class="top-footer">
+            <h1>Studie: Credibility von Websites</h1>
+        </footer>
+        <div class="information">
+            <p>
+                Hallo!
+                <br>
+                <br>
+                Vielen Dank, dass Sie sich für unsere Studie Zeit nehmen. Für diese Studie bekommen Sie nach Abschluss 1 VP.
+                Im Rahmen des Seminars 'Informationsverhalten verstehen' von Dr. David Elsweiler führen wir zum Thema Credibility (=Glaubwürdigkeit) von Websites eine 
+                Online-Studie durch. Sie werden insgesamt 5 Screenshots von Websites betrachten. Nachdem Sie diese betrachtet haben, müssen Sie Fragen dazu beantworten.
+            </p>
+            <center><button id="start_button" type="button">Starten</button></center>
+        </div>
+    </div>
+    <div class="pre-questionaire" hidden=true>
+        <form>
+            <label for="age">Wie alt sind Sie?</label>
+            <input type="number" id="age" name="age" placeholder="Wie alt sind Sie...">
+            <label for="course_of_studies">Welche(s) Studienfach/Studienfächer studieren Sie?</label>
+            <input type="text" id="course_of_studies" name="course_of_studies" placeholder="Ihr Studiengang...">
+            <label for="gender">Welchem Geschlecht ordnen Sie sich zu?</label>
+            <select id="gender" name="gender">
+              <option value="female">Weiblich</option>
+              <option value="male">Männlich</option>
+              <option value="deverse">Divers</option>
+              <option value="no_specification">Keine Angabe</option>
+            </select>
+            <label for="selector">Wählen Sie ein Element</label>
+            <select id="selectNumber" name="selector">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <label for="credibility_scale">Wie credible ist dieser Artikel für Sie?</label>
+            <ul class="likert">
+                <li class="leftLikertText"> Not Credible</li>
+                <li><input type="radio" name="credibility" value="1" /></li>
+                <li><input type="radio" name="credibility" value="2" /></li>
+                <li><input type="radio" name="credibility" value="3" /></li>
+                <li><input type="radio" name="credibility" value="4" /></li>
+                <li class="leftLikertText"><input type="radio" name="credibility" value="5" /></li>
+                <li> Very Credible </li>
+            </ul>
+        </form>
+        <center style="margin-top: 2em;"><button id="prequestionaire_button" type="button">Weiter</button></center>
+        <center id="hinweisText" hidden=true><p style="color: red; font-size: 14px">Bitte machen Sie überall eine Angabe!</p></center>
+    </div>
+    <div class="timer_view" hidden="true">
+        <footer class="top-footer">
+            <button type="button" style="font-size: 15; float: left;">Fertig!</button>
+            <p style="font-size: 24; float: right;">0:20</p>
+            <img src="pool/doc_1.png" alt="Website">
+        </footer>
+    </div>
+    <div class="notimer_view" hidden=true>
+        <button type="button" style="font-size: 15; float: left;">Fertig!</button>
+        <img src="pool/doc_1.png" alt="Website">
+    </div>
+    <div class="questions_afterwards" hidden=true>
+
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
