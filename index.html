@@ -14,71 +14,177 @@
 </head>
 
 <body>
+   <main>
     <div class="intro">
         <footer class="top-footer">
-            <h1>Studie: Credibility von Websites</h1>
+            <h1>Studie: Credibility von Glaubwürdigkeit</h1>
         </footer>
         <div class="information">
             <p>
                 Hallo!
                 <br>
                 <br>
-                Vielen Dank, dass Sie sich für unsere Studie Zeit nehmen. Für diese Studie bekommen Sie nach Abschluss 1 VP.
+                Vielen Dank, dass Sie sich für unsere Studie Zeit nehmen. Für diese Studie bekommen Studenten der Informationswissenschaft / Medieninformatik nach Abschluss 0.5 VP.
                 Im Rahmen des Seminars 'Informationsverhalten verstehen' von Dr. David Elsweiler führen wir zum Thema Credibility (=Glaubwürdigkeit) von Websites eine 
-                Online-Studie durch. Sie werden insgesamt 5 Screenshots von Websites betrachten. Nachdem Sie diese betrachtet haben, müssen Sie Fragen dazu beantworten.
+                Online-Studie durch. Sie werden insgesamt 4 Screenshots von Websites betrachten. Nachdem Sie diese betrachtet haben, müssen Sie Fragen dazu beantworten. Bitte verwenden Sie während der Durchführung
+                der Studie keine externen Quellen. Bitte bleiben Sie auf dieser Seite und schließen Sie das Browserfenster erst nach Abschluss der Studie.
             </p>
             <center><button id="start_button" type="button">Starten</button></center>
         </div>
     </div>
     <div class="pre-questionaire" hidden=true>
-        <form>
-            <label for="age">Wie alt sind Sie?</label>
-            <input type="number" id="age" name="age" placeholder="Wie alt sind Sie...">
-            <label for="course_of_studies">Welche(s) Studienfach/Studienfächer studieren Sie?</label>
-            <input type="text" id="course_of_studies" name="course_of_studies" placeholder="Ihr Studiengang...">
-            <label for="gender">Welchem Geschlecht ordnen Sie sich zu?</label>
-            <select id="gender" name="gender">
-              <option value="female">Weiblich</option>
-              <option value="male">Männlich</option>
-              <option value="deverse">Divers</option>
-              <option value="no_specification">Keine Angabe</option>
+        <form id="pre-questionaire_form">
+            <label for="Alter">Wie alt sind Sie?</label>
+            <input type="number" id="Alter" name="Alter" placeholder="Wie alt sind Sie...">
+            <label for="Geschlecht">Welchem Geschlecht ordnen Sie sich zu?</label>
+            <select id="Geschlecht" name="gender">
+              <option value="Weiblich">Weiblich</option>
+              <option value="Männlich">Männlich</option>
+              <option value="Divers">Divers</option>
+              <option value="Keine Angabe">Keine Angabe</option>
             </select>
-            <label for="selector">Wählen Sie ein Element</label>
-            <select id="selectNumber" name="selector">
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <label for="Bildungsabschluss">Was ist Ihr höchster Bildungsabschluss?</label>
+            <select name="Bildungsabschluss" id="Bildungsabschluss"> <!-- name="selector" -->
+                <option value="Kein Abschluss">(noch) kein Abschluss</option>
+                <option value="Hauptschulabschluss">Hauptschulabschluss</option>
+                <option value="Realschulabschluss">Realschulabschluss (Mittlere Reife, Fachoberschulreife, o.Ä.). </option>
+                <option value="Abitur">Abitur (allgemeine Hochschulreife), fachgebundene Hochschulreife oder Fachhochschulreife</option>
+                <option value="(Fach-) Hochschulabschluss">(Fach-) Hochschulabschluss (Bachelor, Master, Magister, Diplom, Staatsexamen, Promotion) </option>
             </select>
-            <label for="credibility_scale">Wie credible ist dieser Artikel für Sie?</label>
+            <label for="Beruf">Welchen Beruf üben Sie derzeit aus?</label>
+            <input type="text" id="Beruf" name="Beruf" placeholder="Ihr Beruf...">
+            <label for="Umgang Mit Zeitdruck">Wie gehen Sie mit Zeitdruck um?</label>
             <ul class="likert">
-                <li class="leftLikertText"> Not Credible</li>
-                <li><input type="radio" name="credibility" value="1" /></li>
-                <li><input type="radio" name="credibility" value="2" /></li>
-                <li><input type="radio" name="credibility" value="3" /></li>
-                <li><input type="radio" name="credibility" value="4" /></li>
-                <li class="leftLikertText"><input type="radio" name="credibility" value="5" /></li>
-                <li> Very Credible </li>
+                <li class="likertDiscription">Sehr schlecht</li>
+                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="7" /></li>
+                <li class="likertDiscription">Sehr schlecht</li>
+            </ul>
+            <br>
+            <label for="Arbeit unter Zeitdruck">Wie oft stehen Sie während Ihrer Arbeit unter Zeitdruck?</label>
+            <ul class="likert">
+                <li class="likertDiscription">Gar nicht</li>
+                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="7" /></li>
+                <li class="likertDiscription">Sehr häufig</li>
+            </ul>
+            <br>
+            <label for="Internet-Nutzung">Wie oft nutzen Sie das Internet?</label>
+            <ul class="likert">
+                <li class="likertDiscription">Ich benutze nie das Internet</li>
+                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="7" /></li>
+                <li class="likertDiscription">Ich benutze sehr häufig das Internet</li>
+            </ul>
+            <br>
+            <label for="Internet-Erfahrung">Wie erfahren sind Sie im Umgang mit dem Internet?</label>
+            <ul class="likert">
+                <li class="likertDiscription">Ich benutze nie das Internet</li>
+                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="7" /></li>
+                <li class="likertDiscription">Ich benutze sehr häufig das Internet</li>
+            </ul>
+            <br>
+            <label for="Fachkenntnisse">Welche Fachkenntnisse haben Sie?</label>
+            <ul class="likert">
+                <li class="likertDiscription">Ich bin überhaupt kein Experte</li>
+                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="1" /></li>
+                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="2" /></li>
+                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="3" /></li>
+                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="4" /></li>
+                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="5" /></li>
+                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="6" /></li>
+                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="7" /></li>
+                <li class="likertDiscription">Ich bin ein absoluter Experte</li>
+            </ul>
+            <br>
+            <label for="Vielfalt_WWW">Wie vertraut sind Sie mit der Vielfalt und Menge der im Internet/WWW verfügbaren Informationen?</label>
+            <ul class="likert">
+                <li class="likertDiscription">Gar nicht bekannt</li>
+                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="7" /></li>
+                <li class="likertDiscription">Sehr vertraut</li>
+            </ul>
+            <br>
+            <label for="Zugänglichkeit_WWW">Wie zugänglich ist das Internet für Sie?</label>
+            <ul class="likert">
+                <li class="likertDiscription">Es ist sehr schwierig für mich, auf das Internet zuzugreifen</li>
+                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="7" /></li>
+                <li class="likertDiscription">Der Zugriff auf das Intemet/WWW ist für mich sehr einfach</li>
             </ul>
         </form>
         <center style="margin-top: 2em;"><button id="prequestionaire_button" type="button">Weiter</button></center>
         <center id="hinweisText" hidden=true><p style="color: red; font-size: 14px">Bitte machen Sie überall eine Angabe!</p></center>
     </div>
-    <div class="timer_view" hidden="true">
-        <footer class="top-footer">
-            <button type="button" style="font-size: 15; float: left;">Fertig!</button>
-            <p style="font-size: 24; float: right;">0:20</p>
-            <img src="pool/doc_1.png" alt="Website">
-        </footer>
+    <div class="experiment">
+        <div class="experiment_intro" hidden=true>
+            <footer class="top-footer">
+                <h1 id="experimentTitle"></h1>
+            </footer>
+            <div>
+                <p class="information_text" id="information_text"></p>
+                <center><button id="start_experiment_button" type="button">Starten</button></center>
+            </div>
+        </div>
+        <div class="timer_view" hidden=true>
+            <footer class="top-footer">
+                <button id="timer_done_button" type="button" style="font-size: 15; float: left;">Fertig!</button>
+                <p id="timer" style="font-size: 24; float: right;">0:20</p>
+                <img id="website_image" src="" alt="Website">
+            </footer>
+        </div>
+        <div class="questions_afterwards" hidden=true>
+            <footer class="top-footer">
+                <h1>Fragen zur Website</h1>
+            </footer>
+            <form id="questions_afterwards_form">
+                <label for="example">Beispielfrage?</label>
+                <input type="text" id="example" name="example" placeholder="Wie alt sind Sie...">
+            </form>
+            <center style="margin-top: 2em;"><button id="after_questions_button" type="button">Weiter</button></center>
+        </div>
+        
     </div>
-    <div class="notimer_view" hidden=true>
-        <button type="button" style="font-size: 15; float: left;">Fertig!</button>
-        <img src="pool/doc_1.png" alt="Website">
-    </div>
-    <div class="questions_afterwards" hidden=true>
+</main>   
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
 
-    </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 
 </html>
