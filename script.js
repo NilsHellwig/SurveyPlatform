@@ -1,4 +1,5 @@
 import Countdown from "./countdown.js"
+import { document_urls } from './documents_url.js'
 var countdown = new Countdown();
 
 // init firebase
@@ -14,11 +15,11 @@ var firebaseConfig = {
    appId: "1:342158347548:web:aeaf5a8526c22f2d5ffed9",
    measurementId: "G-VZ58RSCBN4"
  };
- // Initialize Firebase
- firebase.initializeApp(firebaseConfig);
- var database = firebase.database();
- var conditions_database = database.ref('/condition');
- var participants_database = database.ref('/participants');
+
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+var conditions_database = database.ref('/condition');
+var participants_database = database.ref('/participants');
 
 // init subpages
 let intro = document.querySelector(".intro");
@@ -27,9 +28,8 @@ let preQuestionaire = document.querySelector(".pre-questionaire")
 // init localStorage
 var myStorage = localStorage;
 
-// init seconds variable
-var seconds;
-
+// ------> !!!!!!
+localStorage.clear();
 
 let start_button = document.querySelector("#start_button");
 start_button.addEventListener("click",function() {
@@ -37,10 +37,10 @@ start_button.addEventListener("click",function() {
    preQuestionaire.hidden = false;
 });
 
-
 $("#prequestionaire_button").click( function()
    {
       let formInput = $("#pre-questionaire_form").serializeArray();
+      console.log(formInput);
       let counter = 0;
       formInput.forEach(element => {
          if (element.value !== ""){
@@ -49,7 +49,7 @@ $("#prequestionaire_button").click( function()
             document.querySelector("#hinweisText").hidden = false;
          }
       });
-      if (counter === formInput.length){
+      if (counter === 2){ // 11 is the amount of questions available
          addDataToLocalStorage(formInput);
          hideAllClasses()
          start_study();
@@ -64,19 +64,6 @@ function addDataToLocalStorage(data) {
    console.log("Neue Daten hinzugefügt: ", getAllElementsFromLocalStorage());
 }
 
-function getAllElementsFromLocalStorage() {
-
-   var archive = {}, // Notice change here
-       keys = Object.keys(myStorage),
-       i = keys.length;
-
-   while ( i-- ) {
-       archive[ keys[i] ] = myStorage.getItem( keys[i] );
-   }
-
-   return archive;
-}
-
 function start_study(){
    conditions_database.once("value").then(function(snapshot){
       let condition_count = snapshot.val();
@@ -86,7 +73,7 @@ function start_study(){
       let users_condition;
       if (c1 <= c2 && c1 <= c3){
          users_condition = "30"
-      }
+      } 
       if (c1 > c2 && c3 >= c2){
          users_condition = "60"
       }
@@ -100,14 +87,7 @@ function start_study(){
    });
 }
 
-function create_web_pages_pool() {
-   let file_names = ["sample1","sample2","sample3","sample4","sample5","sample6","sample7"]
-   let selected_conditions = getRandom(file_names,5)
-   myStorage.setItem("condition",JSON.stringify(selected_conditions))
-   console.log(myStorage.getItem("condition"));
-}
-// create_web_pages_pool2();
-function create_web_pages_pool2(){
+function create_web_pages_pool(){
    let y1 = Math.floor(Math.random() * 4);
    let y2 = y1;
    while(y1==y2){
@@ -115,7 +95,7 @@ function create_web_pages_pool2(){
    }
    let indezies = []
    for (let i = 0; i < 4; i++) {
-      indezies[i] = Math.floor(Math.random() * 4) + 1;
+      indezies[i] = Math.floor(Math.random() * 3) + 1;
    }
    let links = []
    for (let i=0; i<4; i++){
@@ -128,46 +108,9 @@ function create_web_pages_pool2(){
       let link = "doc_"+t+"_"+i+"_"+indezies[i]
       links.push(link)
    }
-   console.log(links)
    links = shuffle(links)
    myStorage.setItem("condition",JSON.stringify(links))
    console.log(myStorage.getItem("condition"));
-}
-
-// Fisher Yates Shuffle Algorithm
-function shuffle(a) {
-   var j, x, i;
-   for (i = a.length - 1; i > 0; i--) {
-       j = Math.floor(Math.random() * (i + 1));
-       x = a[i];
-       a[i] = a[j];
-       a[j] = x;
-   }
-   return a;
-}
-
-function getRandom(arr, n) {
-   var result = new Array(n),
-       len = arr.length,
-       taken = new Array(len);
-   if (n > len)
-       throw new RangeError("getRandom: more elements taken than available");
-   while (n--) {
-       var x = Math.floor(Math.random() * len);
-       result[n] = arr[x in taken ? taken[x] : x];
-       taken[x] = --len in taken ? taken[len] : len;
-   }
-   return result;
-}
-
-function save_study_results(){
-   let results = getAllElementsFromLocalStorage();
-   for (var key in results){
-      if (/([\.])/.test(key)||/([\-])/.test(key)){
-         delete results[key];
-      }
-   }
-   participants_database.push(results);
 }
 
 function start_condition() {
@@ -179,11 +122,28 @@ function start_condition() {
    experimentElement.hidden = false;
    title.innerHTML = myStorage.getItem("task")+". Szenario"
    information_text.innerHTML = ""
+
+   let current_topic = JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1][6];
+   let motivation_text;
+   if (current_topic === "0") {
+      motivation_text = "Sie interessieren sich für Topic 0. Bla Bla. " 
+   }
+   if (current_topic === "1") {
+      motivation_text = "Sie interessieren sich für Topic 1. Bla Bla. "
+   }
+   if (current_topic === "2") {
+      motivation_text = "Sie interessieren sich für Topic 2. Bla Bla. "
+   }
+   if (current_topic === "3") {
+      motivation_text = "Sie interessieren sich für Topic 3. Bla Bla. "
+   }
+
+
    if (myStorage.getItem("user_condition")==="no_limit"){
-      let task_description = "Sie interessiern sich für XY. Sie können sich die Internetseite so lange anschauen, wie Sie möchten!";
+      let task_description = motivation_text + "Sie können sich die Internetseite so lange anschauen, wie Sie möchten!";
       information_text.innerHTML = task_description;
    } else {
-      let task_description = "Sie interessiern sich für XY. Sie können sich die Internetseite maximal "+myStorage.getItem("user_condition")+" Sekunden Zeit!";
+      let task_description = motivation_text + "Sie können sich die Internetseite maximal "+myStorage.getItem("user_condition")+" Sekunden Zeit!";
       information_text.innerHTML = task_description;
    }
 }
@@ -198,7 +158,9 @@ function startExperimentButtonSetup() {
       let timer_view = document.querySelector(".timer_view");
       timer_view.hidden = false;
       console.log("pool/"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+".png");
-      document.querySelector("#website_image").src="pool/"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+".png"
+      document.querySelector("#website_image").src = "pool/sample1.png" // ersetzen!
+      // document.querySelector("#website_image").src="pool/"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+".png"
+      document.querySelector("#url").innerHTML = document_urls[JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]]
       $("img").on("load", function () {
          $('img').off('load');
          console.log("loaded!");
@@ -230,6 +192,7 @@ document.querySelector("#timer_done_button").addEventListener("click",function()
    } else {
       saveTime(countdown.getIncrement());
       countdown.destroyIncrement();
+      startQuestionsAfterwards();
    }
 });
 countdown.addEventListener("timeEnd",function(event) {
@@ -252,6 +215,57 @@ function startQuestionsAfterwards() {
    document.querySelector(".questions_afterwards").hidden = false;
 }
 
+$("#after_questions_button").click( function()
+   {
+      let formInput = $("#questions_afterwards_form").serializeArray();
+      console.log(formInput);
+      let counter = 0;
+      formInput.forEach(element => {
+         if (element.value !== ""){
+            counter+=1;
+         }
+      });
+      if(formInput.length < 2){
+         document.querySelector("#hinweisTextAfterQuestionaire").hidden = false;
+      }
+      if (counter === 2){ // 11 is the amount of questions available
+         console.log("Entered Data: ",formInput);
+         formInput.forEach(element => {
+            element.name = "Task_"+myStorage.getItem("task")+"_"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+"_"+element.name
+         });
+         console.log("Entered Data: ",formInput);
+         addDataToLocalStorage(formInput);
+         hideAllClassesExperiment();
+         myStorage.setItem("task", 1+parseInt(myStorage.getItem("task")));
+         console.log(myStorage.getItem("task"));
+         if (myStorage.getItem("task") < 5){
+            clearForms();
+            start_condition();
+         } else {
+            console.log("Studie ist vorbei!");
+            save_study_results();
+            document.querySelector(".outro").hidden = false;
+         }
+      }
+   }
+);
+
+
+// Hide Classes Methods
+function clearForms() {
+   let radioButtons = document.querySelectorAll("input[type=radio]");
+   console.log(radioButtons);
+   radioButtons.forEach(rButton => {
+      rButton.checked = false;
+   });
+   let inputTexts = document.querySelectorAll("input[type=text]");
+   inputTexts.forEach(inputT => {
+      inputT.value = "";
+   });
+   document.querySelector("#hinweisTextAfterQuestionaire").hidden = true;
+
+}
+
 function hideAllClasses() {
    document.querySelectorAll('main > *').forEach(function(el) {
       el.hidden = true;
@@ -262,4 +276,42 @@ function hideAllClassesExperiment() {
    document.querySelectorAll('.experiment > *').forEach(function(el) {
       el.hidden = true;
    });
+}
+
+
+// Database
+
+function save_study_results(){
+   let results = getAllElementsFromLocalStorage();
+   for (var key in results){
+      if (/([\.])/.test(key)||/([\-])/.test(key)){
+         delete results[key];
+      }
+   }
+   participants_database.push(results);
+}
+
+// Algorithms
+
+function getAllElementsFromLocalStorage() {
+   var archive = {}, // Notice change here
+       keys = Object.keys(myStorage),
+       i = keys.length;
+
+   while ( i-- ) {
+       archive[ keys[i] ] = myStorage.getItem( keys[i] );
+   }
+   return archive;
+}
+
+// Fisher Yates Shuffle Algorithm
+function shuffle(a) {
+   var j, x, i;
+   for (i = a.length - 1; i > 0; i--) {
+       j = Math.floor(Math.random() * (i + 1));
+       x = a[i];
+       a[i] = a[j];
+       a[j] = x;
+   }
+   return a;
 }

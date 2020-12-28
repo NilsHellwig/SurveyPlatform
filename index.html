@@ -17,130 +17,130 @@
    <main>
     <div class="intro">
         <footer class="top-footer">
-            <h1>Studie: Credibility von Glaubwürdigkeit</h1>
+            <h1>Study: Credibility of Web pages</h1>
         </footer>
         <div class="information">
             <p>
                 Hallo!
                 <br>
                 <br>
-                Vielen Dank, dass Sie sich für unsere Studie Zeit nehmen. Für diese Studie bekommen Studenten der Informationswissenschaft / Medieninformatik nach Abschluss 0.5 VP.
-                Im Rahmen des Seminars 'Informationsverhalten verstehen' von Dr. David Elsweiler führen wir zum Thema Credibility (=Glaubwürdigkeit) von Websites eine 
-                Online-Studie durch. Sie werden insgesamt 4 Screenshots von Websites betrachten. Nachdem Sie diese betrachtet haben, müssen Sie Fragen dazu beantworten. Bitte verwenden Sie während der Durchführung
-                der Studie keine externen Quellen. Bitte bleiben Sie auf dieser Seite und schließen Sie das Browserfenster erst nach Abschluss der Studie.
+                Thank you for taking the time to complete our study. For this study, students of Information Science / Media Informatics receive 0.5 VP upon completion.
+                As part of the seminar 'Informationsverhalten verstehen' by Dr. David Elsweiler, we are conducting an online study on the credibility of websites. 
+                You will look at a total of 4 screenshots of websites. After you have looked at them, you will have to answer questions about them. Please do not use any external sources
+                while conducting the study and please conduct this study on a computer and not on a mobile device. Furthermore, please stay on this page and do not close the browser window until you have completed the study.
             </p>
             <center><button id="start_button" type="button">Starten</button></center>
         </div>
     </div>
     <div class="pre-questionaire" hidden=true>
         <form id="pre-questionaire_form">
-            <label for="Alter">Wie alt sind Sie?</label>
-            <input type="number" id="Alter" name="Alter" placeholder="Wie alt sind Sie...">
-            <label for="Geschlecht">Welchem Geschlecht ordnen Sie sich zu?</label>
-            <select id="Geschlecht" name="gender">
-              <option value="Weiblich">Weiblich</option>
-              <option value="Männlich">Männlich</option>
-              <option value="Divers">Divers</option>
-              <option value="Keine Angabe">Keine Angabe</option>
+            <label for="age">Wie alt sind Sie?</label>
+            <input type="number" id="age" name="age" placeholder="Wie alt sind Sie...">
+            <label for="gender">Welchem Geschlecht ordnen Sie sich zu?</label>
+            <select id="gender" name="gender">
+              <option value="female">Weiblich</option>
+              <option value="male">Männlich</option>
+              <option value="diverse">Divers</option>
+              <option value="no specification">Keine Angabe</option>
             </select>
-            <label for="Bildungsabschluss">Was ist Ihr höchster Bildungsabschluss?</label>
-            <select name="Bildungsabschluss" id="Bildungsabschluss"> <!-- name="selector" -->
+            <label for="educational qualification">Was ist Ihr höchster Bildungsabschluss?</label>
+            <select name="educational qualification" id="Bildungsabschluss"> <!-- name="selector" -->
                 <option value="Kein Abschluss">(noch) kein Abschluss</option>
                 <option value="Hauptschulabschluss">Hauptschulabschluss</option>
                 <option value="Realschulabschluss">Realschulabschluss (Mittlere Reife, Fachoberschulreife, o.Ä.). </option>
                 <option value="Abitur">Abitur (allgemeine Hochschulreife), fachgebundene Hochschulreife oder Fachhochschulreife</option>
                 <option value="(Fach-) Hochschulabschluss">(Fach-) Hochschulabschluss (Bachelor, Master, Magister, Diplom, Staatsexamen, Promotion) </option>
             </select>
-            <label for="Beruf">Welchen Beruf üben Sie derzeit aus?</label>
-            <input type="text" id="Beruf" name="Beruf" placeholder="Ihr Beruf...">
-            <label for="Umgang Mit Zeitdruck">Wie gehen Sie mit Zeitdruck um?</label>
+            <label for="profession">Welchen Beruf üben Sie derzeit aus?</label>
+            <input type="text" id="profession" name="profession" placeholder="Ihr Beruf...">
+            <label for="dealing_with_time_pressure">Wie gehen Sie mit Zeitdruck um?</label>
             <ul class="likert">
                 <li class="likertDiscription">Sehr schlecht</li>
-                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="Umgang Mit Zeitdruck" value="7" /></li>
-                <li class="likertDiscription">Sehr schlecht</li>
+                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="7" /></li>
+                <li class="likertDiscription">Sehr gut</li>
             </ul>
             <br>
-            <label for="Arbeit unter Zeitdruck">Wie oft stehen Sie während Ihrer Arbeit unter Zeitdruck?</label>
+            <label for="work_under_time_pressure">Wie oft stehen Sie während Ihrer Arbeit unter Zeitdruck?</label>
             <ul class="likert">
                 <li class="likertDiscription">Gar nicht</li>
-                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="Arbeit unter Zeitdruck" value="7" /></li>
+                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="7" /></li>
                 <li class="likertDiscription">Sehr häufig</li>
             </ul>
             <br>
-            <label for="Internet-Nutzung">Wie oft nutzen Sie das Internet?</label>
+            <label for="web_usage_frequency">Wie oft nutzen Sie das Internet?</label>
             <ul class="likert">
-                <li class="likertDiscription">Ich benutze nie das Internet</li>
-                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Nutzung" value="7" /></li>
-                <li class="likertDiscription">Ich benutze sehr häufig das Internet</li>
+                <li class="likertDiscription">Nie</li>
+                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="7" /></li>
+                <li class="likertDiscription">Sehr häufig</li>
             </ul>
             <br>
-            <label for="Internet-Erfahrung">Wie erfahren sind Sie im Umgang mit dem Internet?</label>
+            <label for="web_usage_experience">Wie erfahren sind Sie im Umgang mit dem Internet?</label>
             <ul class="likert">
-                <li class="likertDiscription">Ich benutze nie das Internet</li>
-                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="Internet-Erfahrung" value="7" /></li>
-                <li class="likertDiscription">Ich benutze sehr häufig das Internet</li>
+                <li class="likertDiscription">Keine Erfahrung</li>
+                <li class="likertOption"><input type="radio" name="web_usage_experience" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_experience" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_experience" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_experience" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_experience" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_experience" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="web_usage_experience" value="7" /></li>
+                <li class="likertDiscription">Eine große Menge an Erfahrung</li>
             </ul>
             <br>
-            <label for="Fachkenntnisse">Welche Fachkenntnisse haben Sie?</label>
+            <label for="professional_knowledge">Welche Fachkenntnisse haben Sie?</label>
             <ul class="likert">
                 <li class="likertDiscription">Ich bin überhaupt kein Experte</li>
-                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="1" /></li>
-                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="2" /></li>
-                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="3" /></li>
-                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="4" /></li>
-                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="5" /></li>
-                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="6" /></li>
-                <li  class="likertOption"><input type="radio" name="Fachkenntnisse" value="7" /></li>
+                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="1" /></li>
+                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="2" /></li>
+                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="3" /></li>
+                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="4" /></li>
+                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="5" /></li>
+                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="6" /></li>
+                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="7" /></li>
                 <li class="likertDiscription">Ich bin ein absoluter Experte</li>
             </ul>
             <br>
-            <label for="Vielfalt_WWW">Wie vertraut sind Sie mit der Vielfalt und Menge der im Internet/WWW verfügbaren Informationen?</label>
+            <label for="web_diversity">Wie vertraut sind Sie mit der Vielfalt und Menge der im Internet/WWW verfügbaren Informationen?</label>
             <ul class="likert">
                 <li class="likertDiscription">Gar nicht bekannt</li>
-                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="Vielfalt_WWW" value="7" /></li>
+                <li class="likertOption"><input type="radio" name="web_diversity" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="web_diversity" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="web_diversity" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="web_diversity" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="web_diversity" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="web_diversity" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="web_diversity" value="7" /></li>
                 <li class="likertDiscription">Sehr vertraut</li>
             </ul>
             <br>
-            <label for="Zugänglichkeit_WWW">Wie zugänglich ist das Internet für Sie?</label>
+            <label for="web_accessibility">Wie zugänglich ist das Internet für Sie?</label>
             <ul class="likert">
                 <li class="likertDiscription">Es ist sehr schwierig für mich, auf das Internet zuzugreifen</li>
-                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="Zugänglichkeit_WWW" value="7" /></li>
+                <li class="likertOption"><input type="radio" name="web_accessibility" value="1" /></li>
+                <li class="likertOption"><input type="radio" name="web_accessibility" value="2" /></li>
+                <li class="likertOption"><input type="radio" name="web_accessibility" value="3" /></li>
+                <li class="likertOption"><input type="radio" name="web_accessibility" value="4" /></li>
+                <li class="likertOption"><input type="radio" name="web_accessibility" value="5" /></li>
+                <li class="likertOption"><input type="radio" name="web_accessibility" value="6" /></li>
+                <li class="likertOption"><input type="radio" name="web_accessibility" value="7" /></li>
                 <li class="likertDiscription">Der Zugriff auf das Intemet/WWW ist für mich sehr einfach</li>
             </ul>
         </form>
@@ -158,23 +158,55 @@
             </div>
         </div>
         <div class="timer_view" hidden=true>
-            <footer class="top-footer">
-                <button id="timer_done_button" type="button" style="font-size: 15; float: left;">Fertig!</button>
-                <p id="timer" style="font-size: 24; float: right;">0:20</p>
-                <img id="website_image" src="" alt="Website">
+            <footer class="top-footer-timer">
+                <button class="footer-el1" id="timer_done_button" type="button" style="font-size: 15; float: left;">Fertig!</button>
+                <h2 id="url" >Testtext</h2>
+                <p id="timer" style="font-size: 24; float: right;" class="footer-el3">0:20</p>
             </footer>
+                <img id="website_image" src="" alt="Website">
         </div>
         <div class="questions_afterwards" hidden=true>
             <footer class="top-footer">
                 <h1>Fragen zur Website</h1>
             </footer>
             <form id="questions_afterwards_form">
-                <label for="example">Beispielfrage?</label>
-                <input type="text" id="example" name="example" placeholder="Wie alt sind Sie...">
+                <label for="credibility_of_website">Wie bewerten Sie die Glaubwürdigkeit dieser Website?</label>
+                <ul class="likert">
+                    <li class="likertDiscription">Überhaupt nicht glaubwürdig</li>
+                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="1" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="2" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="3" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="4" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="5" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="6" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="7" /></li>
+                    <li class="likertDiscription">Sehr glaubwürdig</li>
+                </ul>
+                <br>
+                <label for="credibility_difficulty">Wie fiel es Ihnen, eine Entscheidung bezüglich der Glaubwürdigkeit zu treffen?</label>
+                <ul class="likert">
+                    <li class="likertDiscription">Sehr schwer</li>
+                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="1" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="2" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="3" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="4" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="5" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="6" /></li>
+                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="7" /></li>
+                    <li class="likertDiscription">Sehr leicht</li>
+                </ul>
             </form>
             <center style="margin-top: 2em;"><button id="after_questions_button" type="button">Weiter</button></center>
+            <center id="hinweisTextAfterQuestionaire" hidden=true><p style="color: red; font-size: 14px">Bitte machen Sie überall eine Angabe!</p></center>
         </div>
-        
+        <div class="outro" hidden=true>
+            <footer class="top-footer">
+                <h1>Vielen Dank für die Teilnahme!</h1>
+            </footer>
+            <div class="information">
+                <p>Wenn Sie für diese Studie Versuchspersonenstunden angerechnet bekommen möchten, dann XY!</p>
+            </div>
+        </div>
     </div>
 </main>   
   <!-- The core Firebase JS SDK is always required and must be listed first -->
