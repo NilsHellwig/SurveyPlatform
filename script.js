@@ -120,10 +120,13 @@ function start_condition() {
    let experimentElement = document.querySelector(".experiment_intro");
    document.querySelector(".experiment").hidden = false;
    experimentElement.hidden = false;
-   title.innerHTML = myStorage.getItem("task")+". Scenario"
-   information_text.innerHTML = ""
-
+   title.innerHTML = myStorage.getItem("task")+". Scenario";
+   information_text.innerHTML = "";
    let current_topic = JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1][6];
+   myStorage.setItem("task1_website",JSON.parse(localStorage.getItem("condition") || "[]")[0])
+   myStorage.setItem("task2_website",JSON.parse(localStorage.getItem("condition") || "[]")[1])
+   myStorage.setItem("task3_website",JSON.parse(localStorage.getItem("condition") || "[]")[2])
+   myStorage.setItem("task4_website",JSON.parse(localStorage.getItem("condition") || "[]")[3])
    let motivation_text;
    if (current_topic === "0") {
       motivation_text = motivations[current_topic]
@@ -143,7 +146,7 @@ function start_condition() {
       let task_description = motivation_text + "You can look at the website for as long as you like!";
       information_text.innerHTML = task_description;
    } else {
-      let task_description = motivation_text + "You can view the website at a maximum of "+myStorage.getItem("user_condition")+" Seconds!";
+      let task_description = motivation_text + "You can view the website at a maximum of "+myStorage.getItem("user_condition")+" seconds!";
       information_text.innerHTML = task_description;
    }
 }
@@ -205,7 +208,7 @@ function saveTime(time) {
    console.log("saveTime method fired!");
    // -1, da Array bei 0 beginnt. das local Storage Objekt "task" wird befusst am Anfang auf 1 gesetzt, da der Text entnommen wird für den Titel.
    console.log(JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]);
-   myStorage.setItem(JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+"_time",time);
+   myStorage.setItem(myStorage.getItem("task")+"_time",time);
    console.log("All saved elements: ");
    console.log(getAllElementsFromLocalStorage());
 }
@@ -232,7 +235,7 @@ $("#after_questions_button").click( function()
       if (counter === 19 || (counter === 18 && formInput[18].value === "")){ // 11 is the amount of questions available
          console.log("Entered Data: ",formInput);
          formInput.forEach(element => {
-            element.name = "Task_"+myStorage.getItem("task")+"_"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+"_"+element.name
+            element.name = "task"+myStorage.getItem("task")+"_"+element.name
          });
          console.log("Entered Data: ",formInput);
          addDataToLocalStorage(formInput);
@@ -245,6 +248,7 @@ $("#after_questions_button").click( function()
          } else {
             console.log("Studie ist vorbei!");
             save_study_results();
+            save_condition();
             document.querySelector(".outro").hidden = false;
          }
       }
@@ -283,14 +287,21 @@ function hideAllClassesExperiment() {
 // Database
 
 function save_study_results(){
+   myStorage.removeItem("condition")
    let results = getAllElementsFromLocalStorage();
-   console.log("results");
    for (var key in results){
       if (/([\.])/.test(key)||/([\-])/.test(key)){
          delete results[key];
       }
    }
    participants_database.push(results);
+}
+
+function save_condition() {
+   conditions_database.child(myStorage.getItem("user_condition")).once("value").then(function(snapshot){
+      let condition_count = snapshot.val()+1;
+      conditions_database.child(myStorage.getItem("user_condition")).set(condition_count);
+   });
 }
 
 // Algorithms
