@@ -3,8 +3,10 @@ html {
     font-family: 'Manrope', sans-serif;
 }
 
-main {
-    margin-top: 2em;
+body {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
 }
   
 .pre-questionaire,.questions_afterwards {
@@ -116,6 +118,7 @@ label {
 
 img {
     width: 100%;
+    margin-top: 6em;
 }
 
 .information_text {
@@ -137,6 +140,10 @@ img {
 .top-footer-timer {
     display: grid;
     grid-template-columns: 200px auto 15%;
+    background-color: rgba(255,255,255,0.85);
+    border-bottom: solid rgba(200,0,0,0.6);
+    position: fixed;
+    width: 100%;
 }
 
 #url, .footer-el3 {
