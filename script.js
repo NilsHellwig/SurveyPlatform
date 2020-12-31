@@ -1,5 +1,5 @@
 import Countdown from "./countdown.js"
-import { document_urls } from './documents_url.js'
+import { document_urls, motivations } from './documents_url.js'
 var countdown = new Countdown();
 
 // init firebase
@@ -49,7 +49,7 @@ $("#prequestionaire_button").click( function()
             document.querySelector("#hinweisText").hidden = false;
          }
       });
-      if (counter === 2){ // 11 is the amount of questions available
+      if (counter === 11){ // 11 is the amount of questions available
          addDataToLocalStorage(formInput);
          hideAllClasses()
          start_study();
@@ -120,30 +120,30 @@ function start_condition() {
    let experimentElement = document.querySelector(".experiment_intro");
    document.querySelector(".experiment").hidden = false;
    experimentElement.hidden = false;
-   title.innerHTML = myStorage.getItem("task")+". Szenario"
+   title.innerHTML = myStorage.getItem("task")+". Scenario"
    information_text.innerHTML = ""
 
    let current_topic = JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1][6];
    let motivation_text;
    if (current_topic === "0") {
-      motivation_text = "Sie interessieren sich für Topic 0. Bla Bla. " 
+      motivation_text = motivations[current_topic]
    }
    if (current_topic === "1") {
-      motivation_text = "Sie interessieren sich für Topic 1. Bla Bla. "
+      motivation_text = motivations[current_topic]
    }
    if (current_topic === "2") {
-      motivation_text = "Sie interessieren sich für Topic 2. Bla Bla. "
+      motivation_text = motivations[current_topic]
    }
    if (current_topic === "3") {
-      motivation_text = "Sie interessieren sich für Topic 3. Bla Bla. "
+      motivation_text = motivations[current_topic]
    }
 
 
    if (myStorage.getItem("user_condition")==="no_limit"){
-      let task_description = motivation_text + "Sie können sich die Internetseite so lange anschauen, wie Sie möchten!";
+      let task_description = motivation_text + "You can look at the website for as long as you like!";
       information_text.innerHTML = task_description;
    } else {
-      let task_description = motivation_text + "Sie können sich die Internetseite maximal "+myStorage.getItem("user_condition")+" Sekunden Zeit!";
+      let task_description = motivation_text + "You can view the website at a maximum of "+myStorage.getItem("user_condition")+" Seconds!";
       information_text.innerHTML = task_description;
    }
 }
@@ -158,8 +158,8 @@ function startExperimentButtonSetup() {
       let timer_view = document.querySelector(".timer_view");
       timer_view.hidden = false;
       console.log("pool/"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+".png");
-      document.querySelector("#website_image").src = "pool/sample1.png" // ersetzen!
-      // document.querySelector("#website_image").src="pool/"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+".png"
+      //document.querySelector("#website_image").src = "pool/sample1.png" // ersetzen!
+      document.querySelector("#website_image").src="pool/"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+".png"
       document.querySelector("#url").innerHTML = document_urls[JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]]
       $("img").on("load", function () {
          $('img').off('load');
@@ -225,10 +225,11 @@ $("#after_questions_button").click( function()
             counter+=1;
          }
       });
-      if(formInput.length < 2){
+      if(counter <= 19){
          document.querySelector("#hinweisTextAfterQuestionaire").hidden = false;
       }
-      if (counter === 2){ // 11 is the amount of questions available
+      console.log("counter: ",counter);
+      if (counter === 19 || (counter === 18 && formInput[18].value === "")){ // 11 is the amount of questions available
          console.log("Entered Data: ",formInput);
          formInput.forEach(element => {
             element.name = "Task_"+myStorage.getItem("task")+"_"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+"_"+element.name
@@ -283,6 +284,7 @@ function hideAllClassesExperiment() {
 
 function save_study_results(){
    let results = getAllElementsFromLocalStorage();
+   console.log("results");
    for (var key in results){
       if (/([\.])/.test(key)||/([\-])/.test(key)){
          delete results[key];

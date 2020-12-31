@@ -7,7 +7,7 @@ main {
     margin-top: 2em;
 }
   
-.pre-questionaire,.questions_afterwards, .experiment_intro {
+.pre-questionaire,.questions_afterwards {
     margin-top: 2em;
     height: 200px;
     width: 90%;
@@ -23,7 +23,13 @@ main {
     margin-left: 20%; 
 }
 
-
+.experiment_intro {
+    margin-top: 4em;
+    height: 200px;
+    width: 40%;
+    top: 20%;
+    margin-left: 30%; 
+}
 
 h1, button{
     text-align: center;    
@@ -43,7 +49,7 @@ button[type=button] {
     background: rgb(0,0,0,0.05);
     border: none;
     color: rgb(0,0,0);
-    margin: 10px;
+    margin: 20px;
 }
   
 button:hover {
@@ -101,7 +107,7 @@ label, input {
 }
 
 label {
-    margin-top: 3.5em;
+    margin-top: 5.5em;
     clear: both;
     font-size: 20px;
     margin-bottom: 2em;
@@ -135,4 +141,13 @@ img {
 
 #url, .footer-el3 {
     text-align: center;
+}
+
+h2 {
+    font-size: 15px;
+    font-weight: 100;
+}
+
+#hinweisTextAfterQuestionaire {
+    padding-bottom: 10px;
 }

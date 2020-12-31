@@ -1,222 +1,908 @@
 <html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Study: Credibility</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="white-translucent"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name='viewport' content="width=device-width, initial-scale=1">
-  <title>Study: Credibility</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="loading.css">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="white">
-  <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent"/>
-</head>
-
-<body>
-   <main>
-    <div class="intro">
+  <body>
+    <main>
+      <div class="intro">
         <footer class="top-footer">
-            <h1>Study: Credibility of Web pages</h1>
+          <h1>Study: Credibility of Web pages</h1>
         </footer>
         <div class="information">
-            <p>
-                Hallo!
-                <br>
-                <br>
-                Thank you for taking the time to complete our study. For this study, students of Information Science / Media Informatics receive 0.5 VP upon completion.
-                As part of the seminar 'Informationsverhalten verstehen' by Dr. David Elsweiler, we are conducting an online study on the credibility of websites. 
-                You will look at a total of 4 screenshots of websites. After you have looked at them, you will have to answer questions about them. Please do not use any external sources
-                while conducting the study and please conduct this study on a computer and not on a mobile device. Furthermore, please stay on this page and do not close the browser window until you have completed the study.
-            </p>
-            <center><button id="start_button" type="button">Starten</button></center>
+          <p>
+            Hallo!
+            <br />
+            <br />
+            Thank you for taking the time to complete our study. For this study,
+            students of Information Science / Media Informatics receive 0.5 VP
+            upon completion. As part of the seminar 'Informationsverhalten
+            verstehen' by Dr. David Elsweiler, we are conducting an online study
+            on the credibility of websites. You will look at a total of 4
+            screenshots of websites. After you have looked at them, you will
+            have to answer questions about them. Please do not use any external
+            sources while conducting the study and please conduct this study on
+            a computer and not on a mobile device. Furthermore, please stay on
+            this page and do not close the browser window until you have
+            completed the study. All information provided by you in this study will be stored anonymously. By starting the study you agree to this.
+          </p>
+          <center>
+            <button id="start_button" type="button">Start Now</button>
+          </center>
         </div>
-    </div>
-    <div class="pre-questionaire" hidden=true>
+      </div>
+      <div class="pre-questionaire" hidden="true">
+        <footer class="top-footer">
+            <h1>Demographic Data</h1>
+        </footer>
         <form id="pre-questionaire_form">
-            <label for="age">Wie alt sind Sie?</label>
-            <input type="number" id="age" name="age" placeholder="Wie alt sind Sie...">
-            <label for="gender">Welchem Geschlecht ordnen Sie sich zu?</label>
-            <select id="gender" name="gender">
-              <option value="female">Weiblich</option>
-              <option value="male">Männlich</option>
-              <option value="diverse">Divers</option>
-              <option value="no specification">Keine Angabe</option>
-            </select>
-            <label for="educational qualification">Was ist Ihr höchster Bildungsabschluss?</label>
-            <select name="educational qualification" id="Bildungsabschluss"> <!-- name="selector" -->
-                <option value="Kein Abschluss">(noch) kein Abschluss</option>
-                <option value="Hauptschulabschluss">Hauptschulabschluss</option>
-                <option value="Realschulabschluss">Realschulabschluss (Mittlere Reife, Fachoberschulreife, o.Ä.). </option>
-                <option value="Abitur">Abitur (allgemeine Hochschulreife), fachgebundene Hochschulreife oder Fachhochschulreife</option>
-                <option value="(Fach-) Hochschulabschluss">(Fach-) Hochschulabschluss (Bachelor, Master, Magister, Diplom, Staatsexamen, Promotion) </option>
-            </select>
-            <label for="profession">Welchen Beruf üben Sie derzeit aus?</label>
-            <input type="text" id="profession" name="profession" placeholder="Ihr Beruf...">
-            <label for="dealing_with_time_pressure">Wie gehen Sie mit Zeitdruck um?</label>
-            <ul class="likert">
-                <li class="likertDiscription">Sehr schlecht</li>
-                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="dealing_with_time_pressure" value="7" /></li>
-                <li class="likertDiscription">Sehr gut</li>
-            </ul>
-            <br>
-            <label for="work_under_time_pressure">Wie oft stehen Sie während Ihrer Arbeit unter Zeitdruck?</label>
-            <ul class="likert">
-                <li class="likertDiscription">Gar nicht</li>
-                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="work_under_time_pressure" value="7" /></li>
-                <li class="likertDiscription">Sehr häufig</li>
-            </ul>
-            <br>
-            <label for="web_usage_frequency">Wie oft nutzen Sie das Internet?</label>
-            <ul class="likert">
-                <li class="likertDiscription">Nie</li>
-                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_frequency" value="7" /></li>
-                <li class="likertDiscription">Sehr häufig</li>
-            </ul>
-            <br>
-            <label for="web_usage_experience">Wie erfahren sind Sie im Umgang mit dem Internet?</label>
-            <ul class="likert">
-                <li class="likertDiscription">Keine Erfahrung</li>
-                <li class="likertOption"><input type="radio" name="web_usage_experience" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_experience" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_experience" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_experience" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_experience" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_experience" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="web_usage_experience" value="7" /></li>
-                <li class="likertDiscription">Eine große Menge an Erfahrung</li>
-            </ul>
-            <br>
-            <label for="professional_knowledge">Welche Fachkenntnisse haben Sie?</label>
-            <ul class="likert">
-                <li class="likertDiscription">Ich bin überhaupt kein Experte</li>
-                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="1" /></li>
-                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="2" /></li>
-                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="3" /></li>
-                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="4" /></li>
-                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="5" /></li>
-                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="6" /></li>
-                <li  class="likertOption"><input type="radio" name="professional_knowledge" value="7" /></li>
-                <li class="likertDiscription">Ich bin ein absoluter Experte</li>
-            </ul>
-            <br>
-            <label for="web_diversity">Wie vertraut sind Sie mit der Vielfalt und Menge der im Internet/WWW verfügbaren Informationen?</label>
-            <ul class="likert">
-                <li class="likertDiscription">Gar nicht bekannt</li>
-                <li class="likertOption"><input type="radio" name="web_diversity" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="web_diversity" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="web_diversity" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="web_diversity" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="web_diversity" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="web_diversity" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="web_diversity" value="7" /></li>
-                <li class="likertDiscription">Sehr vertraut</li>
-            </ul>
-            <br>
-            <label for="web_accessibility">Wie zugänglich ist das Internet für Sie?</label>
-            <ul class="likert">
-                <li class="likertDiscription">Es ist sehr schwierig für mich, auf das Internet zuzugreifen</li>
-                <li class="likertOption"><input type="radio" name="web_accessibility" value="1" /></li>
-                <li class="likertOption"><input type="radio" name="web_accessibility" value="2" /></li>
-                <li class="likertOption"><input type="radio" name="web_accessibility" value="3" /></li>
-                <li class="likertOption"><input type="radio" name="web_accessibility" value="4" /></li>
-                <li class="likertOption"><input type="radio" name="web_accessibility" value="5" /></li>
-                <li class="likertOption"><input type="radio" name="web_accessibility" value="6" /></li>
-                <li class="likertOption"><input type="radio" name="web_accessibility" value="7" /></li>
-                <li class="likertDiscription">Der Zugriff auf das Intemet/WWW ist für mich sehr einfach</li>
-            </ul>
+          <label for="d1">How old are you?</label>
+          <input type="number" id="d1" name="d1" placeholder="your age..." />
+          <label for="d2">Which gender do you classify yourself as?</label>
+          <select id="d2" name="d2">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="diverse">Diverse</option>
+            <option value="no specification">No specification</option>
+          </select>
+          <label for="d3"
+            >What is your highest educational qualification?</label
+          >
+          <select name="d3" id="Bildungsabschluss">
+            <option value="Kein Abschluss">
+              No qualification yet / (noch) kein Abschluss
+            </option>
+            <option value="Hauptschulabschluss">
+              Lower Secondary School Diploma / Hauptschulabschluss
+            </option>
+            <option value="Realschulabschluss">
+              Secondary School Diploma / Realschulabschluss (Mittlere Reife,
+              Fachoberschulreife, o.Ä.).
+            </option>
+            <option value="Abitur">
+              High School Graduation / Abitur (allgemeine Hochschulreife),
+              fachgebundene Hochschulreife oder Fachhochschulreife
+            </option>
+            <option value="(Fach-) Hochschulabschluss">
+              Academic Degree / (Fach-) Hochschulabschluss (Bachelor, Master,
+              Magister, Diplom, Staatsexamen, Promotion)
+            </option>
+          </select>
+          <label for="d4">What is your current profession?</label>
+          <input
+            type="text"
+            id="d4"
+            name="d4"
+            placeholder="your prefession..."
+          />
+          <label for="d5">How do you deal with time pressure?</label>
+          <ul class="likert">
+            <li class="likertDiscription">very bad</li>
+            <li class="likertOption">
+              <input type="radio" name="d5" value="1" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d5" value="2" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d5" value="3" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d5" value="4" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d5" value="5" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d5" value="6" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d5" value="7" />
+            </li>
+            <li class="likertDiscription">very well</li>
+          </ul>
+
+          <label for="d6"
+            >How often are you under time pressure during your work?</label
+          >
+          <ul class="likert">
+            <li class="likertDiscription">not at all</li>
+            <li class="likertOption">
+              <input type="radio" name="d6" value="1" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d6" value="2" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d6" value="3" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d6" value="4" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d6" value="5" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d6" value="6" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d6" value="7" />
+            </li>
+            <li class="likertDiscription">very often</li>
+          </ul>
+
+          <label for="d7">How often do you use the Internet?</label>
+          <ul class="likert">
+            <li class="likertDiscription">I never use the Intemet/WWW</li>
+            <li class="likertOption">
+              <input type="radio" name="d7" value="1" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d7" value="2" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d7" value="3" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d7" value="4" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d7" value="5" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d7" value="6" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d7" value="7" />
+            </li>
+            <li class="likertDiscription">I very often use the Intemet/WWW</li>
+          </ul>
+
+          <label for="d8">How experienced are you in using the Internet?</label>
+          <ul class="likert">
+            <li class="likertDiscription">no experience</li>
+            <li class="likertOption">
+              <input type="radio" name="d8" value="1" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d8" value="2" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d8" value="3" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d8" value="4" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d8" value="5" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d8" value="6" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d8" value="7" />
+            </li>
+            <li class="likertDiscription">a great deal of experience</li>
+          </ul>
+
+          <label for="d9"
+            >What expertise do you have in relation to the Internet?</label
+          >
+          <ul class="likert">
+            <li class="likertDiscription">"I am not at all expert</li>
+            <li class="likertOption">
+              <input type="radio" name="d9" value="1" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d9" value="2" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d9" value="3" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d9" value="4" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d9" value="5" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d9" value="6" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d9" value="7" />
+            </li>
+            <li class="likertDiscription">"I am completely expert</li>
+          </ul>
+
+          <label for="d10"
+            >How familiar are you with the variety and amount of information
+            available on the Internet/WWW?</label
+          >
+          <ul class="likert">
+            <li class="likertDiscription">"not at all familiar</li>
+            <li class="likertOption">
+              <input type="radio" name="d10" value="1" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d10" value="2" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d10" value="3" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d10" value="4" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d10" value="5" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d10" value="6" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d10" value="7" />
+            </li>
+            <li class="likertDiscription">"extremely familiar</li>
+          </ul>
+
+          <label for="d11">How accessible is the Internet for you?</label>
+          <ul class="likert">
+            <li class="likertDiscription">
+              ""It is extremely difficult for me to access the Internet/WWW
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d11" value="1" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d11" value="2" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d11" value="3" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d11" value="4" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d11" value="5" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d11" value="6" />
+            </li>
+            <li class="likertOption">
+              <input type="radio" name="d11" value="7" />
+            </li>
+            <li class="likertDiscription">
+              "It is extremely easy for me to access the Intemet/WWW
+            </li>
+          </ul>
         </form>
-        <center style="margin-top: 2em;"><button id="prequestionaire_button" type="button">Weiter</button></center>
-        <center id="hinweisText" hidden=true><p style="color: red; font-size: 14px">Bitte machen Sie überall eine Angabe!</p></center>
-    </div>
-    <div class="experiment">
-        <div class="experiment_intro" hidden=true>
-            <footer class="top-footer">
-                <h1 id="experimentTitle"></h1>
-            </footer>
-            <div>
-                <p class="information_text" id="information_text"></p>
-                <center><button id="start_experiment_button" type="button">Starten</button></center>
-            </div>
+        <center style="margin-top: 2em">
+          <button id="prequestionaire_button" type="button">Start First Scenario</button>
+        </center>
+        <center id="hinweisText" hidden="true">
+            <p style="color: red; font-size: 14px">
+              Please make a decision everywhere!
+            </p>
+          </center>
+      </div>
+      <div class="experiment">
+        <div class="experiment_intro" hidden="true">
+          <footer class="top-footer">
+            <h1 id="experimentTitle"></h1>
+          </footer>
+          <div>
+            <p class="information_text" id="information_text"></p>
+            <center>
+              <button id="start_experiment_button" type="button">
+                Start Scenario
+              </button>
+            </center>
+          </div>
         </div>
-        <div class="timer_view" hidden=true>
-            <footer class="top-footer-timer">
-                <button class="footer-el1" id="timer_done_button" type="button" style="font-size: 15; float: left;">Fertig!</button>
-                <h2 id="url" >Testtext</h2>
-                <p id="timer" style="font-size: 24; float: right;" class="footer-el3">0:20</p>
-            </footer>
-                <img id="website_image" src="" alt="Website">
+        <div class="timer_view" hidden="true">
+          <footer class="top-footer-timer">
+            <button
+              class="footer-el1"
+              id="timer_done_button"
+              type="button"
+              style="font-size: 15; float: left"
+            >
+              Done
+            </button>
+            <h2 id="url">Testtext</h2>
+            <p
+              id="timer"
+              style="font-size: 24; float: right"
+              class="footer-el3"
+            >
+              0:20
+            </p>
+          </footer>
+          <img id="website_image" src="" alt="Website" />
         </div>
-        <div class="questions_afterwards" hidden=true>
-            <footer class="top-footer">
-                <h1>Fragen zur Website</h1>
-            </footer>
-            <form id="questions_afterwards_form">
-                <label for="credibility_of_website">Wie bewerten Sie die Glaubwürdigkeit dieser Website?</label>
-                <ul class="likert">
-                    <li class="likertDiscription">Überhaupt nicht glaubwürdig</li>
-                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="1" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="2" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="3" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="4" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="5" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="6" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_of_website" value="7" /></li>
-                    <li class="likertDiscription">Sehr glaubwürdig</li>
-                </ul>
-                <br>
-                <label for="credibility_difficulty">Wie fiel es Ihnen, eine Entscheidung bezüglich der Glaubwürdigkeit zu treffen?</label>
-                <ul class="likert">
-                    <li class="likertDiscription">Sehr schwer</li>
-                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="1" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="2" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="3" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="4" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="5" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="6" /></li>
-                    <li class="likertOption"><input type="radio" name="credibility_difficulty" value="7" /></li>
-                    <li class="likertDiscription">Sehr leicht</li>
-                </ul>
-            </form>
-            <center style="margin-top: 2em;"><button id="after_questions_button" type="button">Weiter</button></center>
-            <center id="hinweisTextAfterQuestionaire" hidden=true><p style="color: red; font-size: 14px">Bitte machen Sie überall eine Angabe!</p></center>
-        </div>
-        <div class="outro" hidden=true>
-            <footer class="top-footer">
-                <h1>Vielen Dank für die Teilnahme!</h1>
-            </footer>
-            <div class="information">
-                <p>Wenn Sie für diese Studie Versuchspersonenstunden angerechnet bekommen möchten, dann XY!</p>
-            </div>
-        </div>
-    </div>
-</main>   
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+        <div class="questions_afterwards" hidden="true">
+          <footer class="top-footer">
+            <h1>Fragen zur Website</h1>
+          </footer>
+          <form id="questions_afterwards_form">
+            <label for="q1"
+              >How do you rate the credibility of this website?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Not credible at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q1" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q1" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q1" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q1" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q1" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q1" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q1" value="7" />
+              </li>
+              <li class="likertDiscription">Very credible</li>
+            </ul>
+            <label for="q2"
+              >How did you find it to make a decision regarding
+              credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Very hard</li>
+              <li class="likertOption">
+                <input type="radio" name="q2" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q2" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q2" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q2" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q2" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q2" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q2" value="7" />
+              </li>
+              <li class="likertDiscription">Very easy</li>
+            </ul>
+            <label for="q3">How confident are you in your judgement?</label>
+            <ul class="likert">
+              <li class="likertDiscription">Very unsatisfied</li>
+              <li class="likertOption">
+                <input type="radio" name="q3" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q3" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q3" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q3" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q3" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q3" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q3" value="7" />
+              </li>
+              <li class="likertDiscription">Very satisfied</li>
+            </ul>
+            <label for="q4"
+              >Did your prior knowledge of the topic have an impact on your
+              assessment of credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q4" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q4" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q4" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q4" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q4" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q4" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q4" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+            <label for="q5"
+              >Did your interest in the topic have an impact on your assessment
+              of credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q5" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q5" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q5" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q5" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q5" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q5" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q5" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+            <label for="q6">Did you feel any time pressure?</label>
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q6" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q6" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q6" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q6" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q6" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q6" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q6" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+            <label for="q7"
+              >Did your first impression of the website prove true?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q7" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q7" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q7" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q7" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q7" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q7" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q7" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+            <label for="q8"
+              >Did the number of advertisements have an impact on your rating of
+              credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q8" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q8" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q8" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q8" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q8" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q8" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q8" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+            <label for="q9"
+              >Did the aesthetics have an impact on your rating of
+              credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q9" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q9" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q9" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q9" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q9" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q9" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q9" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+            <label for="q10"
+              >Did the name of the website have an impact on your rating of
+              credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q10" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q10" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q10" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q10" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q10" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q10" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q10" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+            <label for="q11"
+              >Did sources (links, literature) provided on the website have an
+              impact on your credibility assessment?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q11" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q11" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q11" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q11" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q11" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q11" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q11" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+
+            <label for="q12"
+              >Did the content (text) have an influence on your assessment of
+              credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q12" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q12" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q12" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q12" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q12" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q12" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q12" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+
+            <label for="q13"
+              >Did the author have an influence on your assessment of
+              credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q13" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q13" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q13" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q13" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q13" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q13" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q13" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+
+            <label for="q14"
+              >Did the writing style of the website have an impact on your
+              credibility rating?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q14" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q14" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q14" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q14" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q14" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q14" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q14" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+
+            <label for="q15"
+              >Did past experience with this website have an impact on your
+              rating of credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q15" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q15" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q15" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q15" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q15" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q15" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q15" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+
+            <label for="q16"
+              >Did you perceive the website to be credible?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q16" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q16" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q16" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q16" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q16" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q16" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q16" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+
+            <label for="q17"
+              >Did the website's affiliation with a particular organization have
+              an impact on your rating of credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q17" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q17" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q17" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q17" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q17" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q17" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q17" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+
+            <label for="q18"
+              >Did the headline have an impact on your rating of
+              credibility?</label
+            >
+            <ul class="likert">
+              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertOption">
+                <input type="radio" name="q18" value="1" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q18" value="2" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q18" value="3" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q18" value="4" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q18" value="5" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q18" value="6" />
+              </li>
+              <li class="likertOption">
+                <input type="radio" name="q18" value="7" />
+              </li>
+              <li class="likertDiscription">Fully applicable</li>
+            </ul>
+
+            <label for="q19"
+              >Are there any other aspects that influenced your rating of
+              credibility?</label
+            >
+            <input
+              type="text"
+              id="q19"
+              name="q19"
+              placeholder="Other aspects that influenced your rating of credibility?"
+            />
+          </form>
+          <center id="hinweisTextAfterQuestionaire" hidden="true">
+            <p style="color: red; font-size: 14px">
+            Please make a decision everywhere!
+            </p>
+          </center>
+          <center style="margin-top: 2em">
+            <button id="after_questions_button" type="button">Next Scenario</button>
+          </center>
+        </div>
+        <div class="outro" hidden="true">
+          <footer class="top-footer">
+            <h1>Thank you very much for participating!</h1>
+          </footer>
+          <div class="information">
+            <p>
+                If you would like to be credited with subject hours for this study, then XY!
+                for this study, then XY!
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="module" src="script.js"></script>
-</body>
-
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
