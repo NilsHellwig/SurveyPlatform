@@ -28,11 +28,11 @@
         </footer>
         <div class="information">
           <p>
-            Hallo!
+            Hello!
             <br />
             <br />
             Thank you for taking the time to complete our study. For this study,
-            students of Information Science / Media Informatics receive 0.5 VP
+            students of Information Science / Media Informatics receive X VP
             upon completion. As part of the seminar 'Informationsverhalten
             verstehen' by Dr. David Elsweiler, we are conducting an online study
             on the credibility of websites. You will look at a total of 4
@@ -50,12 +50,12 @@
       </div>
       <div class="pre-questionaire" hidden="true">
         <footer class="top-footer">
-            <h1>Demographic Data</h1>
+            <h1>Pre-questionnaire</h1>
         </footer>
         <form id="pre-questionaire_form">
-          <label for="d1">How old are you?</label>
+          <label for="d1">How old are you?<font color="red"> *</font></label>
           <input type="number" id="d1" name="d1" placeholder="your age..." />
-          <label for="d2">Which gender do you classify yourself as?</label>
+          <label for="d2">Which gender do you classify yourself as?<font color="red"> *</font></label>
           <select id="d2" name="d2">
             <option value="female">Female</option>
             <option value="male">Male</option>
@@ -63,7 +63,7 @@
             <option value="no specification">No specification</option>
           </select>
           <label for="d3"
-            >What is your highest educational qualification?</label
+            >What is your highest educational qualification?<font color="red"> *</font></label
           >
           <select name="d3" id="Bildungsabschluss">
             <option value="Kein Abschluss">
@@ -85,14 +85,14 @@
               Magister, Diplom, Staatsexamen, Promotion)
             </option>
           </select>
-          <label for="d4">What is your current profession?</label>
+          <label for="d4">What is your current profession?<font color="red"> *</font></label>
           <input
             type="text"
             id="d4"
             name="d4"
-            placeholder="your prefession..."
+            placeholder="your profession?..."
           />
-          <label for="d5">How do you deal with time pressure?</label>
+          <label for="d5">How do you deal with time pressure?<font color="red"> *</font></label>
           <ul class="likert">
             <li class="likertDiscription">very bad</li>
             <li class="likertOption">
@@ -120,7 +120,7 @@
           </ul>
 
           <label for="d6"
-            >How often are you under time pressure during your work?</label
+            >How often are you under time pressure during your work?<font color="red"> *</font></label
           >
           <ul class="likert">
             <li class="likertDiscription">not at all</li>
@@ -148,9 +148,9 @@
             <li class="likertDiscription">very often</li>
           </ul>
 
-          <label for="d7">How often do you use the Internet?</label>
+          <label for="d7">How often do you use the Internet?<font color="red"> *</font></label>
           <ul class="likert">
-            <li class="likertDiscription">I never use the Intemet/WWW</li>
+            <li class="likertDiscription">I never use the Internet/WWW</li>
             <li class="likertOption">
               <input type="radio" name="d7" value="1" />
             </li>
@@ -172,10 +172,10 @@
             <li class="likertOption">
               <input type="radio" name="d7" value="7" />
             </li>
-            <li class="likertDiscription">I very often use the Intemet/WWW</li>
+            <li class="likertDiscription">I very often use the Internet/WWW</li>
           </ul>
 
-          <label for="d8">How experienced are you in using the Internet?</label>
+          <label for="d8">How experienced are you in using the Internet?<font color="red"> *</font></label>
           <ul class="likert">
             <li class="likertDiscription">no experience</li>
             <li class="likertOption">
@@ -203,10 +203,10 @@
           </ul>
 
           <label for="d9"
-            >What expertise do you have in relation to the Internet?</label
+            >What expertise do you have in relation to the Internet?<font color="red"> *</font></label
           >
           <ul class="likert">
-            <li class="likertDiscription">"I am not at all expert</li>
+            <li class="likertDiscription">I am not at all expert</li>
             <li class="likertOption">
               <input type="radio" name="d9" value="1" />
             </li>
@@ -228,15 +228,15 @@
             <li class="likertOption">
               <input type="radio" name="d9" value="7" />
             </li>
-            <li class="likertDiscription">"I am completely expert</li>
+            <li class="likertDiscription">I am completely expert</li>
           </ul>
 
           <label for="d10"
             >How familiar are you with the variety and amount of information
-            available on the Internet/WWW?</label
+            available on the Internet/WWW?<font color="red"> *</font></label
           >
           <ul class="likert">
-            <li class="likertDiscription">"not at all familiar</li>
+            <li class="likertDiscription">not at all familiar</li>
             <li class="likertOption">
               <input type="radio" name="d10" value="1" />
             </li>
@@ -258,13 +258,13 @@
             <li class="likertOption">
               <input type="radio" name="d10" value="7" />
             </li>
-            <li class="likertDiscription">"extremely familiar</li>
+            <li class="likertDiscription">extremely familiar</li>
           </ul>
 
-          <label for="d11">How accessible is the Internet for you?</label>
+          <label for="d11">How accessible is the Internet for you?<font color="red"> *</font></label>
           <ul class="likert">
             <li class="likertDiscription">
-              ""It is extremely difficult for me to access the Internet/WWW
+              It is extremely difficult for me to access the Internet/WWW
             </li>
             <li class="likertOption">
               <input type="radio" name="d11" value="1" />
@@ -288,7 +288,7 @@
               <input type="radio" name="d11" value="7" />
             </li>
             <li class="likertDiscription">
-              "It is extremely easy for me to access the Intemet/WWW
+              It is extremely easy for me to access the Intemet/WWW
             </li>
           </ul>
         </form>
@@ -331,18 +331,18 @@
               style="font-size: 24; float: right"
               class="footer-el3"
             >
-              0:20
+              loading...
             </p>
           </footer>
           <img id="website_image" src="" alt="Website" />
         </div>
         <div class="questions_afterwards" hidden="true">
           <footer class="top-footer">
-            <h1>Fragen zur Website</h1>
+            <h1>Questions about Website</h1>
           </footer>
           <form id="questions_afterwards_form">
             <label for="q1"
-              >How do you rate the credibility of this website?</label
+              >How do you rate the credibility of this website?<font color="red"> *</font></label
             >
             <ul class="likert">
               <li class="likertDiscription">Not credible at all</li>
@@ -370,8 +370,8 @@
               <li class="likertDiscription">Very credible</li>
             </ul>
             <label for="q2"
-              >How did you find it to make a decision regarding
-              credibility?</label
+              >How easy did you find it to make a decision regarding
+              credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
               <li class="likertDiscription">Very hard</li>
@@ -398,9 +398,9 @@
               </li>
               <li class="likertDiscription">Very easy</li>
             </ul>
-            <label for="q3">How confident are you in your judgement?</label>
+            <label for="q3">How confident are you in your judgement?<font color="red"> *</font></label>
             <ul class="likert">
-              <li class="likertDiscription">Very unsatisfied</li>
+              <li class="likertDiscription">Very unconfident</li>
               <li class="likertOption">
                 <input type="radio" name="q3" value="1" />
               </li>
@@ -422,14 +422,14 @@
               <li class="likertOption">
                 <input type="radio" name="q3" value="7" />
               </li>
-              <li class="likertDiscription">Very satisfied</li>
+              <li class="likertDiscription">Very confident</li>
             </ul>
             <label for="q4"
               >Did your prior knowledge of the topic have an impact on your
-              assessment of credibility?</label
+              assessment of credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q4" value="1" />
               </li>
@@ -451,14 +451,14 @@
               <li class="likertOption">
                 <input type="radio" name="q4" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
             <label for="q5"
               >Did your interest in the topic have an impact on your assessment
-              of credibility?</label
+              of credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q5" value="1" />
               </li>
@@ -480,11 +480,11 @@
               <li class="likertOption">
                 <input type="radio" name="q5" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
-            <label for="q6">Did you feel any time pressure?</label>
+            <label for="q6">Did you feel any time pressure?<font color="red"> *</font></label>
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No time pressure at all</li>
               <li class="likertOption">
                 <input type="radio" name="q6" value="1" />
               </li>
@@ -506,13 +506,13 @@
               <li class="likertOption">
                 <input type="radio" name="q6" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">A lot of time pressure</li>
             </ul>
             <label for="q7"
-              >Did your first impression of the website prove true?</label
+              >Did your impression of the website change over time?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No change at all</li>
               <li class="likertOption">
                 <input type="radio" name="q7" value="1" />
               </li>
@@ -534,14 +534,14 @@
               <li class="likertOption">
                 <input type="radio" name="q7" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">A lot of change</li>
             </ul>
             <label for="q8"
-              >Did the number of advertisements have an impact on your rating of
-              credibility?</label
+              >Did the number of advertisements on the websites have an impact on your rating of
+              credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q8" value="1" />
               </li>
@@ -563,14 +563,14 @@
               <li class="likertOption">
                 <input type="radio" name="q8" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
             <label for="q9"
-              >Did the aesthetics have an impact on your rating of
-              credibility?</label
+              >Did the aesthetics of the website have an impact on your rating of
+              credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q9" value="1" />
               </li>
@@ -592,14 +592,14 @@
               <li class="likertOption">
                 <input type="radio" name="q9" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
             <label for="q10"
-              >Did the name of the website have an impact on your rating of
-              credibility?</label
+              >Did the title of the website have an impact on your rating of
+              credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q10" value="1" />
               </li>
@@ -621,15 +621,15 @@
               <li class="likertOption">
                 <input type="radio" name="q10" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
 
             <label for="q11"
               >Did sources (links, literature) provided on the website have an
-              impact on your credibility assessment?</label
+              impact on your credibility assessment?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q11" value="1" />
               </li>
@@ -651,15 +651,15 @@
               <li class="likertOption">
                 <input type="radio" name="q11" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
 
             <label for="q12"
-              >Did the content (text) have an influence on your assessment of
-              credibility?</label
+              >Did the content (text) on the website influence your assessment of
+              credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No influence</li>
               <li class="likertOption">
                 <input type="radio" name="q12" value="1" />
               </li>
@@ -681,15 +681,15 @@
               <li class="likertOption">
                 <input type="radio" name="q12" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong influnce</li>
             </ul>
 
             <label for="q13"
-              >Did the author have an influence on your assessment of
-              credibility?</label
+              >Did the author of the article influence your assessment of
+              credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No influnce</li>
               <li class="likertOption">
                 <input type="radio" name="q13" value="1" />
               </li>
@@ -711,15 +711,15 @@
               <li class="likertOption">
                 <input type="radio" name="q13" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong influence</li>
             </ul>
 
             <label for="q14"
               >Did the writing style of the website have an impact on your
-              credibility rating?</label
+              credibility rating?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q14" value="1" />
               </li>
@@ -741,15 +741,15 @@
               <li class="likertOption">
                 <input type="radio" name="q14" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
 
             <label for="q15"
               >Did past experience with this website have an impact on your
-              rating of credibility?</label
+              rating of credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q15" value="1" />
               </li>
@@ -771,14 +771,14 @@
               <li class="likertOption">
                 <input type="radio" name="q15" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
 
             <label for="q16"
-              >Did you perceive the website to be credible?</label
+              >Did you perceive the website to be credible?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">Not credible at all</li>
               <li class="likertOption">
                 <input type="radio" name="q16" value="1" />
               </li>
@@ -800,15 +800,15 @@
               <li class="likertOption">
                 <input type="radio" name="q16" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Very credible</li>
             </ul>
 
             <label for="q17"
               >Did the website's affiliation with a particular organization have
-              an impact on your rating of credibility?</label
+              an impact on your rating of credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q17" value="1" />
               </li>
@@ -830,15 +830,15 @@
               <li class="likertOption">
                 <input type="radio" name="q17" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
 
             <label for="q18"
               >Did the headline have an impact on your rating of
-              credibility?</label
+              credibility?<font color="red"> *</font></label
             >
             <ul class="likert">
-              <li class="likertDiscription">Doesn't apply at all</li>
+              <li class="likertDiscription">No impact</li>
               <li class="likertOption">
                 <input type="radio" name="q18" value="1" />
               </li>
@@ -860,12 +860,12 @@
               <li class="likertOption">
                 <input type="radio" name="q18" value="7" />
               </li>
-              <li class="likertDiscription">Fully applicable</li>
+              <li class="likertDiscription">Strong impact</li>
             </ul>
 
             <label for="q19"
               >Are there any other aspects that influenced your rating of
-              credibility?</label
+              credibility? (optional)</label
             >
             <input
               type="text"

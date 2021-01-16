@@ -67,15 +67,15 @@ function addDataToLocalStorage(data) {
 function start_study(){
    conditions_database.once("value").then(function(snapshot){
       let condition_count = snapshot.val();
-      let c1 = condition_count["30"];
-      let c2 = condition_count["60"];
+      let c1 = condition_count["3-4"];
+      let c2 = condition_count["24"];
       let c3 = condition_count["no_limit"];
       let users_condition;
       if (c1 <= c2 && c1 <= c3){
-         users_condition = "30"
+         users_condition = "3.4"
       } 
       if (c1 > c2 && c3 >= c2){
-         users_condition = "60"
+         users_condition = "24"
       }
       if (c3 < c1 && c3 < c2){
          users_condition = "no_limit"
@@ -95,7 +95,7 @@ function create_web_pages_pool(){
    }
    let indezies = []
    for (let i = 0; i < 4; i++) {
-      indezies[i] = Math.floor(Math.random() * 3) + 1;
+      indezies[i] = Math.floor(Math.random() * 2) + 1;
    }
    let links = []
    for (let i=0; i<4; i++){
@@ -141,16 +141,15 @@ function start_condition() {
       motivation_text = motivations[current_topic]
    }
 
-
+   let custom =  "Try to judge the credibility of the website.";
    if (myStorage.getItem("user_condition")==="no_limit"){
-      let task_description = motivation_text + "You can look at the website for as long as you like!";
+      let task_description = motivation_text +custom+" You can look at the website for as long as you like! Try to judge the credibility of the website. By clicking the button below, you will see the website.";
       information_text.innerHTML = task_description;
    } else {
-      let task_description = motivation_text + "You can view the website at a maximum of "+myStorage.getItem("user_condition")+" seconds!";
+      let task_description = motivation_text+custom + " You can view the website at a maximum of "+myStorage.getItem("user_condition")+" seconds! By clicking the button below, you will see the website.";
       information_text.innerHTML = task_description;
    }
 }
-
 startExperimentButtonSetup();
 
 function startExperimentButtonSetup() {
@@ -164,18 +163,20 @@ function startExperimentButtonSetup() {
       //document.querySelector("#website_image").src = "pool/sample1.png" // ersetzen!
       document.querySelector("#website_image").src="pool/"+JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]+".png"
       document.querySelector("#url").innerHTML = document_urls[JSON.parse(localStorage.getItem("condition") || "[]")[myStorage.getItem("task")-1]]
+      document.querySelector("#website_image").hidden = true; 
       $("img").on("load", function () {
          $('img').off('load');
          console.log("loaded!");
+         document.querySelector("#website_image").hidden = false; 
          if (myStorage.getItem("user_condition")==="no_limit"){
             document.querySelector("#timer").hidden = true;
             countdown.startTimeCounter();
          } else {
-            if (myStorage.getItem("user_condition")==="60"){
-               document.querySelector('#timer').innerHTML = "60 seconds";
+            if (myStorage.getItem("user_condition")==="24"){
+               document.querySelector('#timer').innerHTML = "24 seconds";
             }
-            if (myStorage.getItem("user_condition")==="30"){
-               document.querySelector('#timer').innerHTML = "30 seconds"
+            if (myStorage.getItem("user_condition")==="3.4"){
+               document.querySelector('#timer').innerHTML = "3.4 seconds"
             }
             console.log("timer started for "+myStorage.getItem("user_condition"));
             countdown.startClock(parseInt(myStorage.getItem("user_condition")));
@@ -190,7 +191,7 @@ function startExperimentButtonSetup() {
 
 document.querySelector("#timer_done_button").addEventListener("click",function() {
    console.log("timer_done klicked!");
-   if (myStorage.getItem("user_condition") === "30" || myStorage.getItem("user_condition") === "60"){
+   if (myStorage.getItem("user_condition") === "3.4" || myStorage.getItem("user_condition") === "24"){
       countdown.stopClock();
    } else {
       saveTime(countdown.getIncrement());
@@ -298,9 +299,13 @@ function save_study_results(){
 }
 
 function save_condition() {
-   conditions_database.child(myStorage.getItem("user_condition")).once("value").then(function(snapshot){
+   let cond = myStorage.getItem("user_condition");
+   if (cond==="3.4"){
+      cond = "3-4"
+   }
+   conditions_database.child(cond).once("value").then(function(snapshot){
       let condition_count = snapshot.val()+1;
-      conditions_database.child(myStorage.getItem("user_condition")).set(condition_count);
+      conditions_database.child(cond).set(condition_count);
    });
 }
 

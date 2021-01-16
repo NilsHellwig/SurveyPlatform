@@ -27,9 +27,9 @@ const document_urls = {
 
 const motivations = {
     0: "While browsing through the current news, you come across an article on convalescent plasma for curing COVID-19. ",
-    1: "A familiar person of yours sends you an article on the subject of whether Tamiflu helps against COVID-19. ",
-    2: "While you are surfing the internet in your daily life, you suddenly come across an article that deals with the topic 'Can high temperatures and humidity prevent COVID-19?'. ",
-    3: "While surfing the internet you found an article that also deals with the topic of whether ACE and ARBs do worsen COVID-19. "
+    1: "A person you know sends you an article on the subject of whether Tamiflu helps against COVID-19. ",
+    2: "While you are surfing the internet, you come across an article that deals with the topic 'Can high temperatures and humidity prevent COVID-19?'. ",
+    3: 'While surfing the internet, you find an article that deals with the topic of whether <dfn class="tooltip">ACE<span role="tooltip">Unter dem WWW (World Wide Web) versteht man das Internet.</span></dfn> and ARBs (Angiotensin II receptor blockers) worsen COVID-19. '
 }
 
 export {document_urls, motivations};

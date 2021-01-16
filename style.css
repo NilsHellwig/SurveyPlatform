@@ -28,9 +28,9 @@ body {
 .experiment_intro {
     margin-top: 4em;
     height: 200px;
-    width: 40%;
+    width: 50%;
     top: 20%;
-    margin-left: 30%; 
+    margin-left: 25%; 
 }
 
 h1, button{
@@ -157,4 +157,79 @@ h2 {
 
 #hinweisTextAfterQuestionaire {
     padding-bottom: 10px;
+}
+
+@media (min-width: 900px) {
+    img {
+      width: 80%;
+      margin-left: 10%;
+    }
+
+    .pre-questionaire, .questions_afterwards {
+       margin-top: 2em;
+       height: 200px;
+       width: 80%;
+       top: 20%;
+       margin-left: 10%;
+    }
+   
+}
+
+@media (min-width: 1200px) {
+
+    img {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .pre-questionaire, .questions_afterwards {
+       margin-top: 2em;
+       height: 200px;
+       width: 70%;
+       top: 20%;
+       margin-left: 15%;
+    }
+   
+}
+
+@media (min-width: 1500px) {
+
+    img {
+        width: 56%;
+        margin-left: 22%;
+    }
+
+    .pre-questionaire, .questions_afterwards {
+       margin-top: 2em;
+       height: 200px;
+       width: 56%;
+       top: 20%;
+       margin-left: 22%;
+    }
+   
+}
+
+.tooltip {
+	color: #c32e04;
+	text-decoration: underline;
+	cursor: help;
+	position: relative;
+}
+
+.tooltip span[role=tooltip] {
+	display: none;
+}
+
+.tooltip:hover span[role=tooltip] {
+	display: block;
+	position: absolute;
+	bottom: 1em;
+	left: -6em;
+	width: 15em;
+	padding: 0.5em;
+	z-index: 100;
+	color: #000;
+	background-color: #ffebe6;
+	border: solid 1px #c32e04;
+	border-radius: 0.2em;
 }
