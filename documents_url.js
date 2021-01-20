@@ -29,7 +29,7 @@ const motivations = {
     0: "While browsing through the current news, you come across an article on convalescent plasma for curing COVID-19. ",
     1: "A person you know sends you an article on the subject of whether Tamiflu helps against COVID-19. ",
     2: "While you are surfing the internet, you come across an article that deals with the topic 'Can high temperatures and humidity prevent COVID-19?'. ",
-    3: 'While surfing the internet, you find an article that deals with the topic of whether <dfn class="tooltip">ACE<span role="tooltip">Unter dem WWW (World Wide Web) versteht man das Internet.</span></dfn> and ARBs (Angiotensin II receptor blockers) worsen COVID-19. '
+    3: 'While surfing the internet, you find an article that deals with the topic of whether <dfn class="tooltip">ACE and ARBs<span role="tooltip"> Angiotensin II receptor blockers (ARBs) are drugs that block the action of angiotensin II by preventing angiotensin II from binding to angiotensin II receptors on the muscles surrounding the blood vessels. This makes the blood vessels enlarge (dilate) and reduces blood pressure. Reduced blood pressure makes it easier for the heart to pump blood and can improve heart failure. It also slows the progression of kidney disease caused by high blood pressure or diabetes. ARBs have similarities to angiotensin-converting enzyme (ACE) inhibitors, but ACE inhibitors work by preventing angiotensin II from forming instead of blocking angiotensin II from binding to muscle on the blood vessels.<br>Source: https://www.medicinenet.com/angiotensin_ii_receptor_blockers<br>/article.htm#what_are_the_uses_for_arbs</span></dfn> worsen COVID-19. '
 }
 
 export {document_urls, motivations};

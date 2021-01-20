@@ -143,7 +143,7 @@ function start_condition() {
 
    let custom =  "Try to judge the credibility of the website.";
    if (myStorage.getItem("user_condition")==="no_limit"){
-      let task_description = motivation_text +custom+" You can look at the website for as long as you like! Try to judge the credibility of the website. By clicking the button below, you will see the website.";
+      let task_description = motivation_text +custom+" You can look at the website for as long as you like! By clicking the button below, you will see the website.";
       information_text.innerHTML = task_description;
    } else {
       let task_description = motivation_text+custom + " You can view the website at a maximum of "+myStorage.getItem("user_condition")+" seconds! By clicking the button below, you will see the website.";
