@@ -20,6 +20,7 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 var conditions_database = database.ref('/condition');
 var participants_database = database.ref('/participants');
+var subject_hours_database = database.ref('/subject_hours');
 
 // init subpages
 let intro = document.querySelector(".intro");
@@ -27,6 +28,24 @@ let preQuestionaire = document.querySelector(".pre-questionaire")
 
 // init localStorage
 var myStorage = localStorage;
+
+
+// ! DELETE THIS
+//
+//
+//
+// 
+// 
+
+//hideAllClassesExperiment();
+//document.querySelector(".intro").hidden = true;
+//document.querySelector(".outro").hidden = false;
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
 
 // ------> !!!!!!
 localStorage.clear();
@@ -283,6 +302,36 @@ function hideAllClassesExperiment() {
       el.hidden = true;
    });
 }
+
+
+// Subject Hours
+
+document.querySelector("#get_subject_hours").addEventListener("click",function() {
+   document.querySelector("#subject_hours_info").innerHTML = '<form id="participant_data"> <label for="prename">Prename (Vorname)<font color="red"> *</font></label> <input type="text" id="prename" name="prename" placeholder="your prename..." /> <label for="surname">Surname (Nachname)<font color="red"> *</font></label> <input type="text" id="surname" name="surname" placeholder="your surname..." /> <label for="matrikelnummer">Matriculation Number (Matrikelnummer)<font color="red"> *</font></label> <input type="text" id="matrikelnummer" name="matrikelnummer" placeholder="your matriculation number..." /> <label for="studienfach">Subject (Studienfach)<font color="red"> *</font></label> <input type="text" id="studienfach" name="studienfach" placeholder="your subject..." /> <label for="mail">E-Mail Adresse<font color="red"> *</font></label> <input type="text" id="mail" name="mail" placeholder="your e-mail..." /><center style="margin-top: 2em"> <button id="save_vp_hours_button" type="button">Submit</button> </center> </form>';
+   document.querySelector("#save_vp_hours_button").addEventListener("click",function() {
+      let form = document.forms["participant_data"];
+      let fd = new FormData(form);
+      let data = {};
+      for (let [key, prop] of fd) {
+         if (prop !== "") {
+            data[key] = prop;
+         }
+      }
+      if (Object.keys(data).length > 4) {
+         subject_hours_database.push({
+            prename: data['prename'],
+            surname: data["surname"],
+            email: data["mail"],
+            matrikelnummer: data["matrikelnummer"],
+            studienfach: data["studienfach"]
+         });
+         document.querySelector("#subject_hours_info").innerHTML = "Study finished. You will receive 0.5 VP. Data has been successfully forwarded to our servers. Please close Tab."
+      }
+   });
+});
+
+
+
 
 
 // Database
